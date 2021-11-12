@@ -37,10 +37,5 @@ test {
 	useJUnitPlatform()
 }
 
-nameOfTaskThatRunsTests {
-	testLogging {
-		events "standardOut"
-	}
-}
 
 
