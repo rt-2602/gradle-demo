@@ -33,8 +33,14 @@ dependencies {
 }
 
 test {
-
 	testLogging.showStandardStreams=true
-
 	useJUnitPlatform()
 }
+
+nameOfTaskThatRunsTests {
+	testLogging {
+		events "standardOut"
+	}
+}
+
+

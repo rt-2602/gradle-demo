@@ -2,11 +2,15 @@ package com;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestRule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
 import org.springframework.boot.test.context.SpringBootTest;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.greaterThan;
-
 import static org.junit.Assert.assertThat;
 
 
@@ -41,5 +45,15 @@ class GradleDemoApplicationTests {
 		//checks if the first parameter's return String length is greater than the second parameter string length
 		assertThat(greetings.greet(message).length(), is(greaterThan(message.length())));
 	}
+
+	@Rule
+	public TestRule testWatcher = new TestWatcher() {
+		@Override
+		public void failed(Throwable t, Description test) {
+			if (t instanceof AssertionError) {
+				System.out.println("Failed assertion: " + t.getMessage());
+			}
+		}
+	};
 
 }
