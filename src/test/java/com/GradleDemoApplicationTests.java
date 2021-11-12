@@ -9,6 +9,7 @@ import static org.hamcrest.Matchers.greaterThan;
 
 import static org.junit.Assert.assertThat;
 
+
 @SpringBootTest
 class GradleDemoApplicationTests {
 
