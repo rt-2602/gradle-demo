@@ -37,7 +37,7 @@ class GradleDemoApplicationTests {
 	public void greetShouldIncludeGreetingPhrase(){
 
 		String message = "World";
-
+		System.out.println("Executing test case in greetShouldIncludeGreetingPhrase");
 		//checks if the first parameter's return String length is greater than the second parameter string length
 		assertThat(greetings.greet(message).length(), is(greaterThan(message.length())));
 	}
